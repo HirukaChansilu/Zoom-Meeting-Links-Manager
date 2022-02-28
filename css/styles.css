@@ -260,7 +260,7 @@ form p {
   height: 30px;
   border: #379efe solid 2px;
 
-  position: absolute;
+  position: fixed;
   bottom: 20px;
 
   display: flex;
