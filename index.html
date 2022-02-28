@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom Links Manager</title>
+
+    <!-- Favicon -->
+
+    <link rel="shortcut icon" href="./Assests/zoom_logo.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <h1>Zoom Meeting Links Manager</h1>
+
+    <div class="container">
+        <!-- Add Btn -->
+
+        <div class="add-btn-filling">
+            <div class="add" onclick="open_add_overlay()">
+                <span class="add-icon">+</span>
+            </div>
+        </div>
+
+        <!-- Card Template -->
+
+        <!-- <div class="meeting-card" onclick="open_link(1)">
+            <img class="zoom-logo" src="./Assests/zoom_icon.svg" alt="zoom icon">
+            <div>
+                <h2>Test</h2>
+                <p>1234567891234567891!34</p>
+            </div>
+
+            <img class="edit" onclick="open_edit_overlay(1)" src="./Assests/edit_btn.svg" alt="edit-btn">
+        </div> -->
+    </div>
+
+    <!-- Overlays -->
+
+    <!-- Add overlay -->
+    <div class="overlay-popup">
+        <div class="overlay-content">
+            <h1>Add a Link</h1>
+            <img class="close-btn" onclick="close_overlay()" src="./Assests/close_btn.svg" alt="close-btn">
+            <form autocomplete="off">
+                <p>Topic</p>
+                <input type="text" name="topic" id="add-topic">
+                <p>Link</p>
+                <input type="text" name="link" id="add-link">
+            </form>
+            <button class="add-link-btn" onclick="add_card()">Add Link</button>
+            <img class="overlay-background" src="./Assests/Add_illustration.svg" alt="Add_illustration">
+        </div>
+    </div>
+
+    <!-- Edit overlay -->
+    <div class="overlay-popup">
+        <div class="overlay-content">
+            <h1>Edit Link</h1>
+            <img class="close-btn" onclick="close_overlay()" src="./Assests/close_btn.svg" alt="close-btn">
+            <form autocomplete="off">
+                <p>Topic</p>
+                <input type="text" name="topic" id="edit-topic">
+                <p>Link</p>
+                <input type="text" name="link" id="edit-link">
+            </form>
+            <button class="edit-link-btn" onclick="edit_link()">Edit Link</button>
+            <img src="./Assests/delete_btn.svg" onclick="open_delete_overlay()" class="delete-btn" alt="delete-btn">
+            <img class="overlay-background" src="./Assests/Edit_illustration.svg" alt="Edit_illustration">
+        </div>
+    </div>
+
+    <!-- Delete overlay -->
+    <div class="overlay-popup">
+        <div class="overlay-content">
+            <h1>Delete Link</h1>
+            <img class="close-btn" onclick="close_overlay()" src="./Assests/close_btn.svg" alt="close-btn">
+            <p>Are You Sure to Delete the Link?</p>
+            <button onclick="delete_link()">Delete Link</button>
+            <img class="overlay-background" src="./Assests/Delete_svg.svg" alt="delete_illustration">
+        </div>
+    </div>
+
+    <!-- Reset overlay -->
+    <div class="overlay-popup">
+        <div class="overlay-content">
+            <h1>Reset</h1>
+            <img class="close-btn" onclick="close_overlay()" src="./Assests/close_btn.svg" alt="close-btn">
+            <p>Are You Sure to Delete all the Link? Note that this will delete all the Saved Links and the action can't
+                be Recovered.</p>
+            <button onclick="reset()">Reset</button>
+            <img class="overlay-background" src="./Assests/Delete_svg.svg" alt="delete_illustration">
+        </div>
+    </div>
+
+    <!-- Corner Buttons -->
+
+    <div class="corner-btn reset" onclick="open_reset_overlay()">
+        <img src="./Assests/reset_btn.png" alt="reset_icon">
+        <span>Reset</span>
+    </div>
+
+    <a href="https://github.com/HirukaChansilu/Zoom-Meeting-Links-Manager/">
+        <div class="corner-btn github">
+            <img src="./Assests/github_btn.svg" alt="github_btn">
+            <span>View on Github</span>
+        </div>
+    </a>
+
+    <!-- JS -->
+
+    <script src="./js/script.js"></script>
+
+</body>
+
+</html>

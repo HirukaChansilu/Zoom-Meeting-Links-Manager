@@ -1,0 +1,319 @@
+/* Keyframes */
+
+@keyframes open-corner-btn {
+  0% {
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+  }
+
+  100% {
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+  }
+}
+
+@keyframes appear-text {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    font-size: 1rem;
+  }
+  100% {
+    opacity: 1;
+    font-size: 1rem;
+  }
+}
+
+/* General */
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+
+  background-image: url(../../Assests/Meeting-svg-2.svg);
+  background-position: bottom 1px right 1px;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-attachment: fixed;
+
+  background-color: #f1f1f1;
+}
+
+h1 {
+  font-weight: 600;
+  padding: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Meeting Card */
+
+.meeting-card {
+  width: 310px;
+  height: 80px;
+  text-align: left;
+
+  background-color: #fff;
+  /* box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.25); */
+  border-radius: 15px;
+  padding: 20px;
+  margin: 10px 20px;
+
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+  cursor: pointer;
+}
+
+.meeting-card:hover,
+.add:hover,
+button:hover {
+  transform: scale(1.01);
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.meeting-card .zoom-logo {
+  width: 80px;
+  margin-right: 20px;
+}
+
+.meeting-card h2,
+p {
+  margin: 0;
+  color: #b7b7b7;
+}
+
+.meeting-card h2 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #000;
+  margin: 10px 0 10px;
+}
+
+.edit {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.edit:hover {
+  transform: scale(1.2);
+}
+
+/* Add Button */
+
+.add {
+  background-color: #fff;
+  border-radius: 15px;
+
+  width: 70px;
+  height: 70px;
+  color: #b7b7b7;
+
+  cursor: pointer;
+}
+
+.add-icon {
+  font-size: 4rem;
+  position: relative;
+  bottom: 10px;
+}
+
+.add-btn-filling {
+  width: 350px;
+  height: 120px;
+  margin: 10px 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container */
+
+.container {
+  display: flex;
+  flex-flow: wrap;
+
+  align-items: center;
+  justify-content: center;
+}
+
+/* Overlays */
+
+.overlay-popup {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-content {
+  max-width: 730px;
+  background-color: #fff;
+  width: 70vw;
+  height: 70vh;
+
+  border-radius: 15px;
+  padding: 5vh 5vw;
+
+  background-color: #f1f1f1;
+
+  position: relative;
+}
+
+input {
+  border: none;
+  border-radius: 10px;
+  height: 30px;
+  width: 70vw;
+  max-width: 700px;
+  margin-bottom: 20px;
+  z-index: 5;
+  position: relative;
+  padding: 0 10px;
+}
+
+form p {
+  margin: 20px 0;
+  color: #7b7b7b;
+}
+
+.overlay-content button {
+  border: none;
+  background-color: #379efe;
+  color: #fff;
+  font-size: 1.3rem;
+  border-radius: 15px;
+  width: 200px;
+  height: 50px;
+
+  position: absolute;
+  bottom: 5vh;
+  left: 5vw;
+
+  z-index: 5;
+
+  cursor: pointer;
+}
+
+.overlay-background {
+  position: absolute;
+  width: 60%;
+  bottom: 5px;
+  right: 5px;
+
+  z-index: 1;
+}
+
+.close-btn {
+  width: 50px;
+
+  position: absolute;
+  top: 5vh;
+  right: 5vw;
+
+  cursor: pointer;
+}
+
+.delete-btn {
+  position: absolute;
+  bottom: 5vh;
+  right: 5vw;
+
+  z-index: 5;
+  width: 50px;
+
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Corner btns */
+
+.corner-btn {
+  background-color: #fff;
+  width: 30px;
+  height: 30px;
+  border: #379efe solid 2px;
+
+  position: absolute;
+  bottom: 20px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  border-radius: 100%;
+
+  cursor: pointer;
+}
+
+.corner-btn:hover {
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.25);
+  animation: open-corner-btn 0.25s ease-in 0s 1 alternate;
+  animation-fill-mode: forwards;
+}
+
+.corner-btn:hover > span {
+  animation: appear-text 0.5s ease-in 0.3s 1 alternate;
+  animation-fill-mode: forwards;
+}
+
+.corner-btn img {
+  width: 30px;
+}
+
+.corner-btn span {
+  opacity: 0;
+  font-size: 0;
+}
+
+.reset {
+  left: 20px;
+}
+
+.reset img {
+  width: 26px;
+}
+
+.github {
+  right: 20px;
+  color: #000;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 700px) {
+  body {
+    background-size: 100%;
+  }
+
+  .overlay-background {
+    width: 80%;
+  }
+}
