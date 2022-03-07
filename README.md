@@ -2,6 +2,8 @@
 
 Are you Tired of Opening other apps to find links of Recurrent Zoom Meeting? Well, This is the Solution For That.😉
 
+https://zoomlinksmanager.netlify.app/
+
 > A Project by Hiruka Chansilu
 
 <br>
